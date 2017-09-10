@@ -36,13 +36,18 @@
 "use strict";
 
 const LUISClient = require("./luis_sdk");
-
+//If you installed with npm
+// const LUISClient = require('luis-sdk');
 const APPID = "Enter your Application Id here";
 const APPKEY = "Enter your Subscription Key here";
 
 var LUISclient = LUISClient({
   appId: APPID,
   appKey: APPKEY,
+  //By default, no domain is set for the package published to NPM.
+  domain: 'westus.api.cognitive.microsoft.com',
+  //Models published to staging should set this flag to true
+  staging: false,
   verbose: true
 });
 
